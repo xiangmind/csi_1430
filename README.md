@@ -1,4 +1,4 @@
-#CSI 1430
+# CSI 1430
 
 CSI 1430 - Introduction to Computer Science I with Laboratory
 
