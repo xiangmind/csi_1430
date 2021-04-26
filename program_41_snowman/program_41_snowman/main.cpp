@@ -40,34 +40,6 @@ void displaySnowman(const Snowman snowmans[], const int n, ostream& os);
 
 
 int main(int argc, const char * argv[]) {
-    /*
-    string fName;
-    ifstream ifs;
-    string line;
-    do {
-        cout << "Enter Name of Data File: ";
-        cin >> fName;
-        cout << fName << endl; //  echo
-
-        ifs.open(fName);
-        if (!ifs.is_open()) {
-            cout << "Error: File Not Open.\n";
-        }
-    } while (!ifs.is_open());
-    
-    if(ifs.is_open()) {
-        cout << "file starts:" << endl;
-
-        while(getline(ifs, line)) {
-            cout << line << endl;
-        }
-        ifs.close();
-
-        cout << "file ends:" << endl;
-    }
-    */
-
-    
     Snowman snowmans[100];
     Snowman snowmansBlue[100];
     Snowman snowmansGreen[100];
@@ -100,7 +72,7 @@ int main(int argc, const char * argv[]) {
         count = readDataFromFile(ifs, snowmans);
         ifs.close();
         
-        
+ 
         //  Process
         sortSnowmanByScarfColor(snowmans, count);
         
@@ -140,13 +112,19 @@ int main(int argc, const char * argv[]) {
         avgVol /= count;
         
         
+         
+         
         //  Output
         cout << fixed << setprecision(2);
         displaySnowman(snowmans, count, cout);
         cout << countHats(snowmans, count) << " Snowmen have a hat.\n";
+        
         cout << countRed << " Snowmen have a RED scarf.\n";
         cout << "The average volume of a snowman is ";
         cout << avgVol << endl;
+        
+        
+        
         
     }
 
@@ -185,9 +163,8 @@ int readDataFromFile(ifstream& openFileStream, Snowman data[]) {
             data[i].setTemperature(temperature);
             data[i].setHasHat(hasHat);
             data[i].setScarfColor(scarfColor);
+            i++;
         }
-        
-        i++;
     }
     count = i;
         
